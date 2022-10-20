@@ -1,6 +1,6 @@
 # Project Process
 
-<img src="Metadata project architecture.png" style="height: 500px; width:1000px;"/>
+<img src="Metadata project architecture.png" style="height: 280px; width:1000px;"/>
 
 ## Extract Data
 
@@ -9,14 +9,17 @@ From databases such as Openml or UCI, download datasets
 ## Generate metadata
 
 Iterate through dataset and store metadata information:  
+Name
+Task Type
+URL
 Number of Rows  
 Number of Features  
 Number of Classes  
-Task Type  
 Date of when data was taken  
 Number of Missing Values  
 Target Attibute  
-Tags 
+Sector
+
 
 Delete dataset when this step is complete.
 
@@ -32,6 +35,12 @@ Use MongoDB to store metadata. This is because there are several advantages to u
 - Free
 
 
+## Weekly Update of Database
 
+This will happen once 7 days since the previous update has passed.  
 
+Download all datasets available. 
+For each dataset:  
+If the database already contains metadata about it, update the metadata depending on if the dataset has changed.   
+Otherwise generate metadata and add metadata to the database.
 
