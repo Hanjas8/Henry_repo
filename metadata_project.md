@@ -1,6 +1,6 @@
 # Project Process
 
-<img src="Metadata project architecture.png" style="height: 280px; width:1000px;"/>
+<img src="Metadata project flow chart.png" style="height: 340px; width:1000px;"/>
 
 ## Extract Data
 
