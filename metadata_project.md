@@ -8,7 +8,7 @@
   
 ## Flow Chart
 
-<img src="Metadata project flow chart_2.png" style="height: 280px; width:1000px;"/>
+<img src="Metadata project flow chart_2.png" style="height: 480px; width:1000px;"/>
 
 <br>
 
