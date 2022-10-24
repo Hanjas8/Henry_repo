@@ -61,5 +61,7 @@ So if there are a million datasets which are extracted, then the database total 
 
 - There are many other key-value databases as well. However popular options such as Redis or DynamoDB have limited querying options. MongoDB has a rich querying language which is almost as powerful as SQL.
 
+- Very Secure
+
 
 
