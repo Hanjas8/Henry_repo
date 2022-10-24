@@ -52,9 +52,7 @@ Number of Classes  (~15 bytes)
 Date of when data was taken  (~10 bytes)  
 Number of Missing Values  (~15 bytes)  
 Target Attibute  (~20 bytes)  
-Sector (~15 bytes)  
-
-<br>
+Sector (~15 bytes)    
 Total - 270 bytes  
 
 So if there are a million datasets which are extracted, then the database total storage will be around 270MB. This is not a lot of data therefore and so MongoDB will run effectively and trouble-free. 
