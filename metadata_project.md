@@ -43,9 +43,9 @@ Use MongoDB to store metadata. This is because there are many advantages to usin
 
 - In terms of storage space, not much storage space is required. For every dataset, the metadata storage is shown:   
 Name (~15 bytes)  
-Task Type  (~ 20bytes)  
+Task Type  (~20bytes)  
 URL  (~30 bytes)  
-Description  ( ~100 bytes)  
+Description  (~100 bytes)  
 Number of Rows  (~15 bytes)  
 Number of Features (~15 bytes)  
 Number of Classes  (~15 bytes)  
