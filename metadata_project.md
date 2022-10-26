@@ -88,4 +88,4 @@ So if there are a million datasets which are extracted, then the database total 
 
 Create a function which does the following:
 - Clients are able to query the database through filtering the metadata labels
-- The url of the datasets selected should be outputted 
+- The URL of the datasets selected should be outputted 
