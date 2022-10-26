@@ -9,7 +9,7 @@
 - Store metadata
 - Update metadata labels
 - Add metadata regularly
-- Allow client to query datasets
+- Allow clients to query datasets
   
 ## **Flow Chart**
 
@@ -87,5 +87,5 @@ So if there are a million datasets which are extracted, then the database total 
 ## Allow clients to query
 
 Create a function which does the following:
-- Clients should be able to query through the database through filtering the metadata labels
-- The metadata of the datasets selected should be outputted 
+- Clients are able to query the database through filtering the metadata labels
+- The url of the datasets selected should be outputted 
