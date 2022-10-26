@@ -1,7 +1,7 @@
 # Project Process
 
 
-## Program Function
+## **Program Function**
 
 - View datasets on API
 - Extract data
@@ -11,11 +11,13 @@
 - Add metadata regularly
 - Allow client to query datasets
   
-## Flow Chart
+## **Flow Chart**
 
 <img src="Metadata project flow chart_3.png" style="height: 500px; width:1000px;"/>
 
 <br>
+
+## **Design Requirements**
 
 ## Extract Data
 
@@ -82,3 +84,8 @@ So if there are a million datasets which are extracted, then the database total 
 - Add new metadata into pre-existing metadata
 - Delete any metadata which has a key that is no longer in the list of metadata labels.
 
+## Allow clients to query
+
+Create a function which does the following:
+- Clients should be able to query through the database through filtering the metadata labels
+- The metadata of the datasets selected should be outputted 
