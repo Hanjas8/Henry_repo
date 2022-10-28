@@ -3,31 +3,44 @@
 
 ## **Program Function**
 
-- View datasets on API
-- Extract data
+- Retrieve data from sources
+- Split data into two lists: a list of new datasets and a list of datasets which have been looked at before.
 - Generate metadata
 - Store metadata
 - Update metadata labels
 - Add metadata regularly
-- Allow clients to query datasets
+- Allow client to query datasets
   
 ## **Flow Chart**
 
-<img src="Flow_chart_4.png" style="height: 500px; width:1000px;"/>
+<img src="Flow_chart_4.png" style="height: 800px; width:500px;"/>
 
 <br>
 
 ## **Design Requirements**
 
-## Extract Data
 
-- Using APIs on databases such as OpenML, select datasets. 
-- Download datasets one by one using a for loop where downloading datasets is the first action of a cycle.
-- After all datasets have been used, end the for loop.
+## Retrieve data from sources
+
+- **Input**: when program is started
+- View and select datasets on databases such as OpenML using APIs
+- **Output**: List of all datasets  
+
+## Split Data into two lists
+
+- **Input**: list of datasets
+- **Output**: 2 lists: one list which contains new datasets - datsets which are going to be inserted into the database, and another list which contains datasets which already have metadata in the database. 
+
+<br>
+
+<img src="Split_data_flow_chart.png" style="height: 600px; width:400px;"/>
+
+<br>
 
 ## Generate metadata
 
-- **Input**: Dataset which does not have metadata in the database
+- **Input**: Dataset
+- Download dataset
 - Store metadata information about each dataset in a dictionary of key-value pairs
 - The keys are:  
 Name   
@@ -49,6 +62,7 @@ Sector
 
 - **Input**: Metadata about one dataset
 - Store metadata in MongoDB
+- **Output**: Return progress status 
 
 
 We are using MongoDB to store metadata. This is because there are many advantages to using it compared to its alternatives: 
@@ -72,20 +86,22 @@ Sector (~15 bytes)
 
 Total - 270 bytes  
 
-So if there are a million datasets which are extracted, then the database total storage will be around 270MB. This is not a lot of data therefore and so MongoDB will run effectively. 
+So if there are a million datasets which are extracted, then the database total storage will be less than 300MB (also MongoDB stores compressed files). This is very little data therefore and so MongoDB will run effectively. 
 
 - **Sufficient querying options**. There are many other key-value databases as well. However popular options such as Redis or DynamoDB have limited querying options. MongoDB has a rich querying language which is almost as powerful as SQL.
 
 ## Update Metadata Labels
 
-- Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
 - **Input**: Dataset which already has metadata in database
+- - Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
 - Generate new metadata for the new keys
 - Add new metadata into pre-existing metadata
 - Delete any metadata which has a key that is no longer in the list of metadata labels.
+- **Output**: Return progress status
 
 ## Allow clients to query
 
 Create a function which does the following:
-- Clients are able to query the database through filtering the metadata labels
-- The URL of the datasets selected should be outputted 
+
+- **Input**: Client queries and filters
+- **Output**: Metadata of datasets which fulfill the filters.
