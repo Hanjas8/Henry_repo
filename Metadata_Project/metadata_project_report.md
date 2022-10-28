@@ -13,7 +13,7 @@
   
 ## **Flow Chart**
 
-<img src="Flow_chart_4.png" style="height: 1000px; width:600px;"/>
+<img src="Flow_chart_4.png" style="height: 1000px; width:700px;"/>
 
 <br>
 
