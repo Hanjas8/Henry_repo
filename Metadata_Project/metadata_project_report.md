@@ -93,7 +93,7 @@ So if there are a million datasets which are extracted, then the database total 
 ## Update Metadata Labels
 
 - **Input**: Dataset which already has metadata in database
-- - Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
+- Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
 - Generate new metadata for the new keys
 - Add new metadata into pre-existing metadata
 - Delete any metadata which has a key that is no longer in the list of metadata labels.
