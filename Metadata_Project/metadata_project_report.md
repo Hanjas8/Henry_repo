@@ -42,19 +42,23 @@
 - **Input**: Dataset
 - Download dataset
 - Store metadata information about each dataset in a dictionary of key-value pairs
-- The keys are:  
+- The starting keys are:  
 Name   
 Task Type  
 URL  
 Description  
 Number of Rows  
-Number of Features 
+Number of Features   
 Number of Classes  
 Date of when data was taken  
 Number of Missing Values  
 Target Attibute  
-Sector
-- For every key, iterate through the dataset and retrieve the value if attainable and add it to the dictionary
+Sector  
+Tag
+- If API is available and information covers all these keys and is reliable, then use it to create the metadata. 
+- Otherwise:  
+  Download dataset  
+  For every key, iterate through the dataset and retrieve the value if attainable and add it to the dictionary
 - Delete dataset when metadata generation is complete
 
 
@@ -86,14 +90,14 @@ Sector (~15 bytes)
 
 Total - 270 bytes  
 
-So if there are a million datasets which are extracted, then the database total storage will be less than 300MB (also MongoDB stores compressed files). This is very little data therefore and so MongoDB will run effectively. (We don't need to consider storage space when considering what database to use)
+So if there are a million datasets which are extracted, then the database total storage will be less than 300MB (also MongoDB stores compressed files). This is very little data therefore and so MongoDB will run effectively. 
 
 - **Sufficient querying options**. There are many other key-value databases as well. However popular options such as Redis or DynamoDB have limited querying options. MongoDB has a rich querying language which is almost as powerful as SQL.
 
 ## Update Metadata Labels
 
 - **Input**: Dataset which already has metadata in database
-- Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
+- - Check if the list of metadata labels that is used for metadata generation has been changed. Updating occurs if there is a change.
 - Generate new metadata for the new keys
 - Add new metadata into pre-existing metadata
 - Delete any metadata which has a key that is no longer in the list of metadata labels.
