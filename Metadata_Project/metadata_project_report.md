@@ -33,7 +33,7 @@
 
 <br>
 
-<img src="Split_data_flow_chart.png" style="height: 600px; width:500px;"/>
+<img src="Split_data_flow_chart.png" style="height: 800px; width:500px;"/>
 
 <br>
 
